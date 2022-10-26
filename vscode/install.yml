@@ -1,0 +1,12 @@
+---
+- name: vscode
+  hosts: localhost
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: apt-get update
+      ansible.builtin.apt:
+        update_cache: yes
+    - name: Install a .deb package
+      ansible.builtin.apt:
+        deb: ../../deb/vscode.deb

@@ -1,0 +1,24 @@
+---
+- name: sdkman
+  hosts: localhost
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: apt-get update
+      ansible.builtin.apt:
+        update_cache: yes
+    - name: Install Curl
+      ansible.builtin.apt:
+        name: curl
+    - name: Download sdkman installer
+      ansible.builtin.get_url: 
+        url: https://get.sdkman.io
+        dest: /tmp/sdkman.sh
+    - name: installer
+      ansible.builtin.script:
+        cmd: /tmp/sdkman.sh
+      become_user: powerxon
+    - name: Add on source
+      ansible.builtin.script:
+        cmd: /$HOME/.sdkman/bin/sdkman-init.sh
+      

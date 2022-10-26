@@ -1,0 +1,10 @@
+programs:
+  - name: ulauncher
+    locations:
+      - type: directory
+        origin:
+          location: ./config/ulauncher
+          isLocal: true
+        to:
+          location: .config/ulauncher
+          isHome: true

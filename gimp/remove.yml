@@ -1,0 +1,12 @@
+---
+- name: remove ulauncher
+  hosts: localhost
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: remove ulauncher repository
+      ansible.builtin.apt_repository:
+        repo: ppa:agornostal/ulauncher
+    - name: Install Ulauncher
+      ansible.builtin.apt:
+        name: ulauncher

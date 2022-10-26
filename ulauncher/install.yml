@@ -1,0 +1,15 @@
+---
+- name: ulauncher
+  hosts: localhost
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Add ulauncher repository
+      ansible.builtin.apt_repository:
+        repo: ppa:agornostal/ulauncher
+    - name: apt-get update
+      ansible.builtin.apt:
+        update_cache: yes
+    - name: Install Ulauncher
+      ansible.builtin.apt:
+        name: ulauncher
