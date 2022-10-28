@@ -1,0 +1,13 @@
+---
+- name: telegram
+  hosts: localhost
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: apt-get update
+      ansible.builtin.apt:
+        update_cache: yes
+    - name: Install Telegram
+      community.general.snap:
+        name:
+          - telegram-desktop

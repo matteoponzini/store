@@ -21,4 +21,3 @@
     - name: Add on source
       ansible.builtin.script:
         cmd: /$HOME/.sdkman/bin/sdkman-init.sh
-      

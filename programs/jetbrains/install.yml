@@ -1,0 +1,15 @@
+---
+- name: Install ToolBox
+  hosts: localhost
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: apt-get update
+      ansible.builtin.apt:
+        update_cache: yes
+    - name: Install ToolBox
+      ansible.builtin.apt:
+        name: libfuse2
+    - name: Install ToolBox
+      ansible.builtin.apt:
+        name: https://github.com/Kong/insomnia/releases/download/core@2022.6.0/Insomnia.Core-2022.6.0.deb
