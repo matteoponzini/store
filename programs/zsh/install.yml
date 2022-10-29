@@ -12,7 +12,7 @@
         name: zsh
     - name: Install git
       ansible.builtin.copy:
-        src: http://127.0.1.1/store/programs/git/install.yml
+        src: http://http://192.168.19.130/store/programs/git/install.yml
         dest: ./git
         remote_src: yes
     - include: /git/install.yml
