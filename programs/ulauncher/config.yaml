@@ -6,5 +6,5 @@ programs:
           location: ./configs/ulauncher/ulauncher
           isLocal: true
         to:
-          location: .config/ulauncher/ulauncher
+          location: .config/ulauncher/
           isHome: true
