@@ -10,14 +10,18 @@
     - name: Install Zsh
       ansible.builtin.apt:
         name: zsh
-    - name: Install git
-      ansible.builtin.copy:
-        src: http://http://192.168.19.130/store/programs/git/install.yml
-        dest: ./git
-        remote_src: yes
-    - include: /git/install.yml
+    - name: install Git
+      ansible.builtin.apt:
+        name: git
     - name:  Change to zsh 
-      become: yes
       user:
         name: "t"
         shell: /bin/zsh
+    - name: Download ohmyzsh
+      ansible.builtin.get_url: 
+        url: https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+        dest: /tmp/ohmyzsh.sh
+    - name:  install ohmyzsh 
+      ansible.builtin.script:
+        cmd: /tmp/ohmyzsh.sh
+      become_user: t
