@@ -3,7 +3,6 @@
   hosts: localhost
   become: yes
   become_method: sudo
-  become_user: t
   tasks:
     - name: apt-get update
       ansible.builtin.apt:
@@ -25,3 +24,4 @@
     - name:  install ohmyzsh 
       ansible.builtin.script:
         cmd: /tmp/ohmyzsh.sh
+      become_user: t
