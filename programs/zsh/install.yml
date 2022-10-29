@@ -14,5 +14,5 @@
     - name:  Change to zsh 
       become: yes
       user:
-        name: "powerxon"
+        name: "t"
         shell: /bin/zsh
