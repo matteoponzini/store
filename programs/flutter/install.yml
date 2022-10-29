@@ -1,0 +1,13 @@
+---
+- name: Flutter
+  hosts: localhost
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: apt-get update
+      ansible.builtin.apt:
+        update_cache: yes
+    - name: Install Flutter
+      community.general.snap:
+        name:
+          - flutter

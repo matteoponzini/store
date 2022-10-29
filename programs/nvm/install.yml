@@ -1,0 +1,20 @@
+---
+- name: nvm
+  hosts: localhost
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: apt-get update
+      ansible.builtin.apt:
+        update_cache: yes
+    - name: Install Curl
+      ansible.builtin.apt:
+        name: curl
+    - name: Download sdkman nvm
+      ansible.builtin.get_url: 
+        url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh
+        dest: /tmp/nvm.sh
+    - name: installer
+      ansible.builtin.script:
+        cmd: /tmp/nvm.sh
+      become_user: powerxon
