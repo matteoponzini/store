@@ -1,0 +1,13 @@
+---
+- name: Flameshot
+  hosts: localhost
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: apt-get update
+      ansible.builtin.apt:
+        update_cache: yes
+    - name: Install Flameshot
+      community.general.snap:
+        name:
+          - flameshot

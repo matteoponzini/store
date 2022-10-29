@@ -1,0 +1,13 @@
+---
+- name: Remove Raspberry Pi Imager 
+  hosts: localhost
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Remove Raspberry Pi Imager
+      ansible.builtin.apt:
+        name: rpi-imager
+        state: absent
+    - name: Remove dependencies that are no longer required
+      ansible.builtin.apt:
+        autoremove: yes

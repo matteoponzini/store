@@ -1,5 +1,5 @@
 ---
-- name: Install Insomnia
+- name: insomnia
   hosts: localhost
   become: yes
   become_method: sudo
@@ -7,6 +7,6 @@
     - name: apt-get update
       ansible.builtin.apt:
         update_cache: yes
-    - name: Install Insomnia
+    - name: Install a .deb package
       ansible.builtin.apt:
-        name: https://github.com/Kong/insomnia/releases/download/core@2022.6.0/Insomnia.Core-2022.6.0.deb
+        deb: deb/insomnia.deb

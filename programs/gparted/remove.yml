@@ -1,0 +1,13 @@
+---
+- name: Remove gparted 
+  hosts: localhost
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Remove gparted
+      ansible.builtin.apt:
+        name: gparted
+        state: absent
+    - name: Remove dependencies that are no longer required
+      ansible.builtin.apt:
+        autoremove: yes

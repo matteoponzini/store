@@ -1,0 +1,12 @@
+---
+- name: Raspberry Pi Imager
+  hosts: localhost
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: apt-get update
+      ansible.builtin.apt:
+        update_cache: yes
+    - name: Install Raspberry Pi Imager
+      ansible.builtin.apt:
+        name: rpi-imager
