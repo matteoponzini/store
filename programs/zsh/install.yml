@@ -1,0 +1,18 @@
+---
+- name: Install Zsh
+  hosts: localhost
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: apt-get update
+      ansible.builtin.apt:
+        update_cache: yes
+    - name: Install Zsh
+      ansible.builtin.apt:
+        name: zsh
+    - include: http://127.0.1.1/store/programs/git/install.yml
+    - name:  Change to zsh 
+      become: yes
+      user:
+        name: "powerxon"
+        shell: /bin/zsh
