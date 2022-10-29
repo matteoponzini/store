@@ -1,0 +1,31 @@
+programs:
+  - name: zsh
+    locations:
+      - type: directory
+        origin:
+          location: ./configs/zsh/custom
+          isLocal: true
+        to:
+          location: .oh-my-zsh/custom
+          isHome: true
+      - type: file
+        origin:
+          location: ./configs/zsh/.p10k.zsh
+          isLocal: true
+        to:
+          location: .p10k.zsh
+          isHome: true
+      - type: file
+        origin:
+          location: ./configs/zsh/.zshrc
+          isLocal: true
+        to:
+          location: .zshrc
+          isHome: true
+      - type: file
+        origin:
+          location: ./configs/zsh/.zshrc.pre-oh-my-zsh
+          isLocal: true
+        to:
+          location: .zshrc.pre-oh-my-zsh
+          isHome: true
