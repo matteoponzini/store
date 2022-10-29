@@ -10,21 +10,21 @@ programs:
           isHome: true
       - type: file
         origin:
-          location: ./configs/zsh/.p10k.zsh
+          location: ./configs/zsh/p10k.zsh
           isLocal: true
         to:
           location: .p10k.zsh
           isHome: true
       - type: file
         origin:
-          location: ./configs/zsh/.zshrc
+          location: ./configs/zsh/zshrc
           isLocal: true
         to:
           location: .zshrc
           isHome: true
       - type: file
         origin:
-          location: ./configs/zsh/.zshrc.pre-oh-my-zsh
+          location: ./configs/zsh/zshrc.pre-oh-my-zsh
           isLocal: true
         to:
           location: .zshrc.pre-oh-my-zsh
