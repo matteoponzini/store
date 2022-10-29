@@ -3,7 +3,7 @@ programs:
     locations:
       - type: directory
         origin:
-          location: ./config/ulauncher/ulauncher
+          location: ./configs/ulauncher/ulauncher
           isLocal: true
         to:
           location: .config/ulauncher/ulauncher
