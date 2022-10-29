@@ -10,7 +10,12 @@
     - name: Install Zsh
       ansible.builtin.apt:
         name: zsh
-    - include: http://127.0.1.1/store/programs/git/install.yml
+    - name: Install git
+      ansible.builtin.copy:
+        src: http://127.0.1.1/store/programs/git/install.yml
+        dest: ./git
+        remote_src: yes
+    - include: /git/install.yml
     - name:  Change to zsh 
       become: yes
       user:
